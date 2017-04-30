@@ -232,8 +232,8 @@ public class Test {
 <h3>
 <a id="user-content-多线程原理及start-和-run区别" class="anchor" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8E%9F%E7%90%86%E5%8F%8Astart-%E5%92%8C-run%E5%8C%BA%E5%88%AB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>多线程原理及start() 和 run()区别</h3>
 <p>两次运行上面的代码发现结果却不相同：</p>
-<p><a href="/Users/sugar/mine/interview/1-compare1.jpeg" target="_blank"><img src="/Users/sugar/mine/interview/1-compare1.jpeg" alt="运行结果1" title="运行结果1" style="max-width:100%;"></a>
-<a href="/Users/sugar/mine/interview/1-compare2.jpeg" target="_blank"><img src="/Users/sugar/mine/interview/1-compare2.jpeg" alt="运行结果2" title="运行结果2" style="max-width:100%;"></a></p>
+<p><a href="1-compare1.jpeg" target="_blank"><img src="1-compare1.jpeg" alt="运行结果1" title="运行结果1" style="max-width:100%;"></a>
+<a href="1-compare2.jpeg" target="_blank"><img src="1-compare2.jpeg" alt="运行结果2" title="运行结果2" style="max-width:100%;"></a></p>
 <p>多线程原理：相当于玩游戏机，只有一个游戏机（cpu），可是有很多人要玩，于是，start是排队！等CPU选中你就是轮到你，你就run（），当CPU的运行的时间片执行完，这个线程就继续排队，等待下一次的run（）。</p>
 <p>调用start（）后，线程会被放到等待队列，等待CPU调度，并不一定要马上开始执行，只是将这个线程置于可动行状态。然后通过JVM，线程Thread会调用run（）方法，执行本线程的线程体。先调用start后调用run，这么麻烦，为了不直接调用run？就是为了实现多线程的优点，没这个start不行。</p>
 <p>1.start（）方法来启动线程，真正实现了多线程运行。这时无需等待run方法体代码执行完毕，可以直接继续执行下面的代码；通过调用Thread类的start()方法来启动一个线程， 这时此线程是处于就绪状态， 并没有运行。 然后通过此Thread类调用方法run()来完成其运行操作的， 这里方法run()称为线程体，它包含了要执行的这个线程的内容， Run方法运行结束， 此线程终止。然后CPU再调度其它线程。
@@ -242,8 +242,8 @@ public class Test {
 <p><a name="user-content-thread%E6%BA%90%E7%A0%81"></a></p>
 <h3>
 <a id="user-content-thread源码" class="anchor" href="#thread%E6%BA%90%E7%A0%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Thread源码</h3>
-<p><a href="/Users/sugar/mine/interview/1-threadsrc.png" target="_blank"><img src="/Users/sugar/mine/interview/1-threadsrc.png" alt="Thread源码1" title="Thread源码1" style="max-width:100%;"></a>
-<a href="/Users/sugar/mine/interview/1-threadsrc.png" target="_blank"><img src="/Users/sugar/mine/interview/1-threadsrc.png" alt="Thread源码2" title="Thread源码2" style="max-width:100%;"></a></p>
+<p><a href="1-threadsrc.png" target="_blank"><img src="1-threadsrc.png" alt="Thread源码1" title="Thread源码1" style="max-width:100%;"></a>
+<a href="1-threadsrc.png" target="_blank"><img src="1-threadsrc.png" alt="Thread源码2" title="Thread源码2" style="max-width:100%;"></a></p>
 <p><a name="user-content-native%E5%85%B3%E9%94%AE%E5%AD%97"></a></p>
 <h3>
 <a id="user-content-native关键字" class="anchor" href="#native%E5%85%B3%E9%94%AE%E5%AD%97" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>native关键字</h3>
@@ -266,26 +266,26 @@ kill就是给某个进程id发送了一个信号。默认发送的信号是SIGTE
 <p><a name="user-content-%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98"></a></p>
 <h3>
 <a id="user-content-查看内存" class="anchor" href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>查看内存</h3>
-<p><a href="/Users/sugar/mine/interview/2-1.png" target="_blank"><img src="/Users/sugar/mine/interview/2-1.png" alt="free命令" title="free命令" style="max-width:100%;"></a></p>
+<p><a href="2-1.png" target="_blank"><img src="2-1.png" alt="free命令" title="free命令" style="max-width:100%;"></a></p>
 <p>其中-m标识将容量值以m为单位进行展现</p>
 <p><a name="user-content-%E6%9F%A5%E7%9C%8Bcpu"></a></p>
 <h3>
 <a id="user-content-查看cpu" class="anchor" href="#%E6%9F%A5%E7%9C%8Bcpu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>查看cpu</h3>
 <p>TOP命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况。类似windows下任务管理器。
-<a href="/Users/sugar/mine/interview/2-2.png" target="_blank"><img src="/Users/sugar/mine/interview/2-2.png" alt="top命令" title="top命令" style="max-width:100%;"></a></p>
+<a href="2-2.png" target="_blank"><img src="2-2.png" alt="top命令" title="top命令" style="max-width:100%;"></a></p>
 <p>/proc/ 目录
 用户和应用程序可以通过proc得到系统的信息，并可以改变内核的某些参数。由于系统的信息，如进程，是动态改变的，所以用户或应用程序读取proc文件时，proc文件系统是动态从系统内核读出所需信息并提交的。
 可以使用cat /proc/cpuinfo 来查看cpu的配置信息。</p>
-<p><a href="/Users/sugar/mine/interview/2-4.png" target="_blank"><img src="/Users/sugar/mine/interview/2-4.png" alt="proc目录" title="proc目录" style="max-width:100%;"></a></p>
+<p><a href="2-4.png" target="_blank"><img src="2-4.png" alt="proc目录" title="proc目录" style="max-width:100%;"></a></p>
 <p><a name="user-content-%E6%9F%A5%E7%9C%8B%E7%A3%81%E7%9B%98"></a></p>
 <h3>
 <a id="user-content-查看磁盘" class="anchor" href="#%E6%9F%A5%E7%9C%8B%E7%A3%81%E7%9B%98" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>查看磁盘</h3>
 <p>fdisk 命令 可以进行linux磁盘分区的管理，类似winpe下的disk genius，需要root用户才能执行，一般用不到。</p>
 <p>df 命令 disk free可查看磁盘文件系统可用空间。
-<a href="/Users/sugar/mine/interview/2-5.png" target="_blank"><img src="/Users/sugar/mine/interview/2-5.png" alt="df命令" title="df命令" style="max-width:100%;"></a></p>
+<a href="2-5.png" target="_blank"><img src="2-5.png" alt="df命令" title="df命令" style="max-width:100%;"></a></p>
 <p>du 命令 disk used 可查看文件或目录占用磁盘的空间大小
-<a href="/Users/sugar/mine/interview/2-6.png" target="_blank"><img src="/Users/sugar/mine/interview/2-6.png" alt="du命令" title="du命令" style="max-width:100%;"></a>
-<a href="/Users/sugar/mine/interview/2-7.png" target="_blank"><img src="/Users/sugar/mine/interview/2-7.png" alt="du命令2" title="du命令2" style="max-width:100%;"></a></p>
+<a href="2-6.png" target="_blank"><img src="2-6.png" alt="du命令" title="du命令" style="max-width:100%;"></a>
+<a href="2-7.png" target="_blank"><img src="2-7.png" alt="du命令2" title="du命令2" style="max-width:100%;"></a></p>
 <p><a name="user-content-%E8%A1%A5%E5%85%85"></a></p>
 <h3>
 <a id="user-content-补充" class="anchor" href="#%E8%A1%A5%E5%85%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>补充</h3>
@@ -294,23 +294,23 @@ kill就是给某个进程id发送了一个信号。默认发送的信号是SIGTE
 <a id="user-content-ps" class="anchor" href="#ps" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ps</h4>
 <p>ps命令为我们提供了一次性的查看进程结果，它所提供的查看结果不是动态连续的；
 可以通过ps命令查找到服务对应的PID
-<a href="/Users/sugar/mine/interview/2-8.png" target="_blank"><img src="/Users/sugar/mine/interview/2-8.png" alt="ps命令" title="ps命令" style="max-width:100%;"></a></p>
+<a href="2-8.png" target="_blank"><img src="2-8.png" alt="ps命令" title="ps命令" style="max-width:100%;"></a></p>
 <p><a name="user-content-find"></a></p>
 <h4>
 <a id="user-content-find" class="anchor" href="#find" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>find</h4>
 <p>find命令主要用来在硬盘上搜索文件， find命令主要用于文件查找，列出当前目录及子目录下所有的文件和文件夹
-<a href="/Users/sugar/mine/interview/2-9.png" target="_blank"><img src="/Users/sugar/mine/interview/2-9.png" alt="find命令" title="find命令" style="max-width:100%;"></a></p>
+<a href="2-9.png" target="_blank"><img src="2-9.png" alt="find命令" title="find命令" style="max-width:100%;"></a></p>
 <p><a name="user-content-grep"></a></p>
 <h4>
 <a id="user-content-grep" class="anchor" href="#grep" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>grep</h4>
 <p>Linux系统中grep命令是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹 配的行打印出来。grep全称是Global Regular Expression Print，表示全局正则表达式版本，它的使用权限是所有用户。
-<a href="/Users/sugar/mine/interview/2-10.png" target="_blank"><img src="/Users/sugar/mine/interview/2-10.png" alt="grep 命令" title="grep命令" style="max-width:100%;"></a></p>
+<a href="2-10.png" target="_blank"><img src="2-10.png" alt="grep 命令" title="grep命令" style="max-width:100%;"></a></p>
 <p><a name="user-content-awk"></a></p>
 <h4>
 <a id="user-content-awk" class="anchor" href="#awk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>awk</h4>
 <p>awk是一个强大的文本分析工具，相对于grep的查找，sed的编辑，awk在其对数据分析并生成报告时，显得尤为强大。简单来说awk就是把文件逐行的读入，以空格为默认分隔符将每行切片，切开的部分再进行各种分析处理。</p>
 <p>下面示例为显示所有docker镜像的id
-<a href="/Users/sugar/mine/interview/2-11.png" target="_blank"><img src="/Users/sugar/mine/interview/2-11.png" alt="awk 命令" title="awk命令" style="max-width:100%;"></a></p>
+<a href="2-11.png" target="_blank"><img src="2-11.png" alt="awk 命令" title="awk命令" style="max-width:100%;"></a></p>
 <p>leetcode题目 <a href="https://leetcode.com/problems/tenth-line/#/description">195. Tenth Line</a>  <a href="https://leetcode.com/problems/transpose-file/#/description">194. Transpose File</a>
 <a href="http://www.cnblogs.com/strongYaYa/p/5684200.html">答案</a></p>
 <p><a name="user-content-sed"></a></p>
@@ -318,14 +318,14 @@ kill就是给某个进程id发送了一个信号。默认发送的信号是SIGTE
 <a id="user-content-sed" class="anchor" href="#sed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>sed</h4>
 <p>sed主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。
 下面示例为在x.txt文件的第四行后添加一行，并将结果输出到标准输出，
-<a href="/Users/sugar/mine/interview/2-12.png" target="_blank"><img src="/Users/sugar/mine/interview/2-12.png" alt="sed 命令" title="sed命令" style="max-width:100%;"></a></p>
+<a href="2-12.png" target="_blank"><img src="2-12.png" alt="sed 命令" title="sed命令" style="max-width:100%;"></a></p>
 <p><a name="user-content-nohup"></a></p>
 <h4>
 <a id="user-content-nohup" class="anchor" href="#nohup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>nohup</h4>
 <p>nohup 命令运行由 Command参数和任何相关的 Arg参数指定的命令，忽略所有挂断（SIGHUP）信号。在注销后使用 nohup 命令运行后台中的程序。要运行后台中的 nohup 命令，添加 &amp; （ 表示“and”的符号）到命令的尾部。
 使用 nohuo ...... &amp; 的组合可以使程序在后台运行
 以下示例为将test.py在后台执行，并查看其输出，最后kill进程的过程
-<a href="/Users/sugar/mine/interview/2-13.png" target="_blank"><img src="/Users/sugar/mine/interview/2-13.png" alt="nohup 命令" title="nohup命令" style="max-width:100%;"></a></p>
+<a href="2-13.png" target="_blank"><img src="2-13.png" alt="nohup 命令" title="nohup命令" style="max-width:100%;"></a></p>
 <p><a name="user-content-%E7%BB%83%E4%B9%A0%E7%8E%AF%E5%A2%83"></a></p>
 <h4>
 <a id="user-content-练习环境" class="anchor" href="#%E7%BB%83%E4%B9%A0%E7%8E%AF%E5%A2%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>练习环境</h4>
@@ -333,11 +333,11 @@ kill就是给某个进程id发送了一个信号。默认发送的信号是SIGTE
 <p><a href="https://www.baidu.com/link?url=Tuq1A6hu1mi_K2PQSspah0pvXSJvMa-1lPaR0Uq-o2ftf_VUGrKWp6NYJozie1TEYFglFg16Wqzv8e2_KdufQpDx7TzOQw2y7xmPHOM8HGa&amp;wd=&amp;eqid=b07ccac30000757c000000035900b3e0">ssh连接器-xshell</a></p>
 <p>新建ssh链接并登陆步骤（截图中地址用户名真实可用）
 新建链接，输入名称主机地址端口号
-<a href="/Users/sugar/mine/interview/2-14.png" target="_blank"><img src="/Users/sugar/mine/interview/2-14.png" alt="新建链接" title="新建链接" style="max-width:100%;"></a>
+<a href="2-14.png" target="_blank"><img src="2-14.png" alt="新建链接" title="新建链接" style="max-width:100%;"></a>
 完成后点击用户身份验证输入用户名密码
-<a href="/Users/sugar/mine/interview/2-15.png" target="_blank"><img src="/Users/sugar/mine/interview/2-15.png" alt="用户名密码" title="用户名密码" style="max-width:100%;"></a>
+<a href="2-15.png" target="_blank"><img src="2-15.png" alt="用户名密码" title="用户名密码" style="max-width:100%;"></a>
 完成后点击链接即可见
-<a href="/Users/sugar/mine/interview/2-16.png" target="_blank"><img src="/Users/sugar/mine/interview/2-16.png" alt="完成" title="完成" style="max-width:100%;"></a></p>
+<a href="2-16.png" target="_blank"><img src="2-16.png" alt="完成" title="完成" style="max-width:100%;"></a></p>
 <p><a name="user-content-%E9%97%AE%E9%A2%983-spring-ioc-%E5%92%8C-aop"></a></p>
 <h2>
 <a id="user-content-问题3-spring-ioc-和-aop" class="anchor" href="#%E9%97%AE%E9%A2%983-spring-ioc-%E5%92%8C-aop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>问题3 spring IOC 和 AOP</h2>
@@ -361,19 +361,19 @@ kill就是给某个进程id发送了一个信号。默认发送的信号是SIGTE
 <p>以上思考相应代码定义。</p>
 <ul>
 <li>通用树加载组件commenTree 类定义：
-<a href="/Users/sugar/mine/interview/3-ioc1.png" target="_blank"><img src="/Users/sugar/mine/interview/3-ioc1.png" alt="commenTree定义" title="commenTree定义" style="max-width:100%;"></a>
+<a href="3-ioc1.png" target="_blank"><img src="3-ioc1.png" alt="commenTree定义" title="commenTree定义" style="max-width:100%;"></a>
 </li>
 <li>从数据源取得数据 ITree接口定义：
-<a href="/Users/sugar/mine/interview/3-ioc2.png" target="_blank"><img src="/Users/sugar/mine/interview/3-ioc2.png" alt="ITree接口定义" title="ITree接口定义" style="max-width:100%;"></a>
+<a href="3-ioc2.png" target="_blank"><img src="3-ioc2.png" alt="ITree接口定义" title="ITree接口定义" style="max-width:100%;"></a>
 </li>
 <li>将数据格式化为对应格式数据 Wrapper接口定义：
-<a href="/Users/sugar/mine/interview/3-ioc3.png" target="_blank"><img src="/Users/sugar/mine/interview/3-ioc3.png" alt="Wrapper接口定义" title="Wrapper接口定义" style="max-width:100%;"></a>
+<a href="3-ioc3.png" target="_blank"><img src="3-ioc3.png" alt="Wrapper接口定义" title="Wrapper接口定义" style="max-width:100%;"></a>
 </li>
 </ul>
 <p>由于需要支持DB、ldap两种数据源所以实现了LdapTree和DBTree。
 由于需要支持xml、json的格式化数据所以实现了XmlWrapper和JsonWrapper</p>
 <p>使用xml对业务中可能会使用到的对象进行定义：
-<a href="/Users/sugar/mine/interview/3-ioc4.png" target="_blank"><img src="/Users/sugar/mine/interview/3-ioc4.png" alt="xml对象定义" title="xml对象定义" style="max-width:100%;"></a></p>
+<a href="3-ioc4.png" target="_blank"><img src="3-ioc4.png" alt="xml对象定义" title="xml对象定义" style="max-width:100%;"></a></p>
 <p>main函数，从xml配置中取得可使用的对象，如下根据具体的实际业务需要进行取得即可：
 ApplicationContext context = new FileSystemXmlApplicationContext(
 "applicationContext.xml");</p>
@@ -392,7 +392,7 @@ ApplicationContext context = new FileSystemXmlApplicationContext(
     CommenTree jsondbTree = (CommenTree)context.getBean("jsondbTree");
     System.out.println(jsondbTree.getRoot());
 </code></pre>
-<p><a href="/Users/sugar/mine/interview/ioc-src.zip">源码</a></p>
+<p><a href="ioc-src.zip">源码</a></p>
 <p>以上即为容器最核心的部分，读取配置，根据定义实例化对象，在业务代码中使用对象。其他的高级用户都是对这几个步骤的扩展，比如读取配置实例化对象可以使用注解的形式。</p>
 <p><a name="user-content-aop"></a></p>
 <h3>
@@ -488,7 +488,7 @@ execution(* spring.ch3.topic1.Chief.*(..))</p>
 <li>也可以简单点，全是用*这个东西来标注，不过一般不这样做，因为每一个切点对应的应该是不同的方法。</li>
 </ul>
 <p>aop.Log 定义</p>
-<p><a href="/Users/sugar/mine/interview/3-aop1.png" target="_blank"><img src="/Users/sugar/mine/interview/3-aop1.png" alt="aop.Log" title="aop.Log" style="max-width:100%;"></a></p>
+<p><a href="3-aop1.png" target="_blank"><img src="3-aop1.png" alt="aop.Log" title="aop.Log" style="max-width:100%;"></a></p>
 <p>funcTIme方法：</p>
 <pre><code>    public Object funcTime(ProceedingJoinPoint joinPoint) throws Throwable {
         funcIn(joinPoint);
@@ -509,7 +509,7 @@ execution(* spring.ch3.topic1.Chief.*(..))</p>
     System.out.println(xmlldapTree.getOneLevel("xxxxx"));
 </code></pre>
 <p>运行结果为：</p>
-<p><a href="/Users/sugar/mine/interview/3-aop2.png" target="_blank"><img src="/Users/sugar/mine/interview/3-aop2.png" alt="运行结果" title="运行结果" style="max-width:100%;"></a></p>
+<p><a href="3-aop2.png" target="_blank"><img src="3-aop2.png" alt="运行结果" title="运行结果" style="max-width:100%;"></a></p>
 <p><a href="aop-src.zip">源码</a></p>
 <p><a name="user-content-%E9%97%AE%E9%A2%984-java-6-7-8-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%88%E5%AE%9E%E9%99%85%E5%BA%94%E8%AF%A5%E6%98%AF%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%89"></a></p>
 <h2>
@@ -559,7 +559,7 @@ execution(* spring.ch3.topic1.Chief.*(..))</p>
 <p><a name="user-content-javaee"></a></p>
 <h3>
 <a id="user-content-javaee" class="anchor" href="#javaee" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>javaee</h3>
-<p>纠正2004年J2EE已经改名为javaee，现在已经发布到javaEE7 <a href="/Users/sugar/mine/interview/JavaEE7%E7%99%BD%E7%9A%AE%E4%B9%A6.doc">javaEE7白皮书</a>
+<p>纠正2004年J2EE已经改名为javaee，现在已经发布到javaEE7 <a href="JavaEE7%E7%99%BD%E7%9A%AE%E4%B9%A6.doc">javaEE7白皮书</a>
 <a name="user-content-%E5%AE%9A%E4%B9%89-2"></a></p>
 <h4>
 <a id="user-content-定义-1" class="anchor" href="#%E5%AE%9A%E4%B9%89-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
@@ -586,7 +586,7 @@ execution(* spring.ch3.topic1.Chief.*(..))</p>
 <p><a name="user-content-servlet"></a></p>
 <h3>
 <a id="user-content-servlet" class="anchor" href="#servlet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>servlet</h3>
-<p>servlet目前已经提交了4.0的JSR <a href="/Users/sugar/mine/interview/Servlet3.1.pdf">Servlet3.1规范</a>
+<p>servlet目前已经提交了4.0的JSR <a href="Servlet3.1.pdf">Servlet3.1规范</a>
 <a name="user-content-%E5%AE%9A%E4%B9%89-3"></a></p>
 <h4>
 <a id="user-content-定义-2" class="anchor" href="#%E5%AE%9A%E4%B9%89-2" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>定义</h4>
@@ -596,8 +596,8 @@ execution(* spring.ch3.topic1.Chief.*(..))</p>
 <a id="user-content-servlet的生命周期" class="anchor" href="#servlet%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>servlet的生命周期</h4>
 <p>Servlet运行于应用服务器上的Web容器中（一般使用Tomcat）。应用服务器中用于管理Java组件的部分被称为容器。当Servlet被部署在应用服务器中以后，由容器控制Servlet的生命周期。Servelt在第一次请求的时候被加载和实例化。Servlet 一旦被加载和实例化，一般不会从容器中删除，直至应用服务器关闭或重新启动。所以第一次访问Servlet所有时间要多于以后访问Servlet所用的时间。</p>
 <p>Servlet生命周期可被定义为从创建直到被销毁的整个过程，具体如下图:
-<a href="/Users/sugar/mine/interview/servlet-life.jpg" target="_blank"><img src="/Users/sugar/mine/interview/servlet-life.jpg" alt="生命周期图" title="生命周期图" style="max-width:100%;"></a>
-<a href="/Users/sugar/mine/interview/servlet-code.png" target="_blank"><img src="/Users/sugar/mine/interview/servlet-code.png" alt="servlet接口定义" title="哈哈" style="max-width:100%;"></a>
+<a href="servlet-life.jpg" target="_blank"><img src="servlet-life.jpg" alt="生命周期图" title="生命周期图" style="max-width:100%;"></a>
+<a href="servlet-code.png" target="_blank"><img src="servlet-code.png" alt="servlet接口定义" title="哈哈" style="max-width:100%;"></a>
 具体执行有以下五个步骤：</p>
 <p>（1）加载Servlet类，创建该类的实例。每一个用户请求都会产生一个新线程；</p>
 <p>（2）Servlet通过调用init()方法进行初始化；servlet实例被创建后，并在servlet能为客户请求提供服务前，容器会调用init()方法（只会调用一次）。可以访问ServletConfig和ServletContext对象，从而获取有关Servlet已经Web应用的信息，进而对Servlet做些初始化工作。</p>
@@ -743,8 +743,8 @@ Cache-Control：no-cache
 <p><a name="user-content-servlet%E4%B8%ADhttprequesthttpresponse%E5%AE%9A%E4%B9%89"></a></p>
 <h5>
 <a id="user-content-servlet中httprequesthttpresponse定义" class="anchor" href="#servlet%E4%B8%ADhttprequesthttpresponse%E5%AE%9A%E4%B9%89" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>servlet中httprequest/httpresponse定义</h5>
-<p><a href="/Users/sugar/mine/interview/http-request.png" target="_blank"><img src="/Users/sugar/mine/interview/http-request.png" alt="httprequest" title="httprequest图" style="max-width:100%;"></a>
-<a href="/Users/sugar/mine/interview/http-response.png" target="_blank"><img src="/Users/sugar/mine/interview/http-response.png" alt="httprespons" title="httprespons图" style="max-width:100%;"></a></p>
+<p><a href="http-request.png" target="_blank"><img src="http-request.png" alt="httprequest" title="httprequest图" style="max-width:100%;"></a>
+<a href="http-response.png" target="_blank"><img src="http-response.png" alt="httprespons" title="httprespons图" style="max-width:100%;"></a></p>
 <p><a name="user-content-http%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BC%98%E5%8A%A3"></a></p>
 <h5>
 <a id="user-content-http协议的优劣" class="anchor" href="#http%E5%8D%8F%E8%AE%AE%E7%9A%84%E4%BC%98%E5%8A%A3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>http协议的优劣</h5>
